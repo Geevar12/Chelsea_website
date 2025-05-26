@@ -20,7 +20,8 @@ body {
 .fixtures-page,
 .news-page,
 .tickets-page,
-.about-page {
+.about-page,
+.merchandise-page {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,27 +35,41 @@ body {
 }
 
 .home {
-  background-image: url('https://wallpapercave.com/wp/wp2551188.jpg');
+  background-image: url('https://wallpaperaccess.com/full/1640035.jpg');
 }
 
 .team {
-  background-image: url('https://wallpapercave.com/wp/wp2551190.jpg');
+  background-image: url('https://wallpapercave.com/wp/wp14376774.jpg');
 }
 
 .fixtures-page {
-  background-image: url('https://wallpapercave.com/wp/wp2551192.jpg');
+  background-image: url('https://wallpapercave.com/wp/wp13645790.jpg');
 }
 
 .news-page {
-  background-image: url('https://wallpapercave.com/wp/wp2551194.jpg');
+  background-image: url('https://img.chelseafc.com/image/upload/f_auto,q_auto:best,f_auto/editorial/historical/new-history-section/chelsea-champions-league-munich-trophy-2012.jpg');
 }
 
 .tickets-page {
-  background-image: url('https://wallpapercave.com/wp/wp2551196.jpg');
+  background-image: url('https://wallpapershigh.com/wp-content/uploads/chelsea-53.webp');
 }
 
 .about-page {
-  background-image: url('https://wallpapercave.com/wp/wp2551198.jpg');
+  background-image:url('https://wallpapercave.com/wp/wp9525824.png');
+}
+
+.merchandise-page {
+  background-image: url('https://wallpaperaccess.com/full/7062383.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Overlay for readability */
@@ -63,7 +78,8 @@ body {
 .fixtures-page::before,
 .news-page::before,
 .tickets-page::before,
-.about-page::before {
+.about-page::before,
+.merchandise-page::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -76,7 +92,8 @@ body {
 .fixtures-page > *,
 .news-page > *,
 .tickets-page > *,
-.about-page > * {
+.about-page > *,
+.merchandise-page > * {
   position: relative;
   z-index: 1;
 }
@@ -87,13 +104,18 @@ body {
 .fixtures-page h2,
 .news-page h2,
 .tickets-page h2,
-.about-page h2 {
+.about-page h2,
+.merchandise-page h2 {
   color: #e6c200;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.7em;
   margin-top: 0.5em;
-  text-shadow: 2px 2px 8px #034694;
-  letter-spacing: 1px;
+  text-shadow: 2px 4px 16px #034694, 0 2px 8px #0008;
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e6c200;
+  padding-bottom: 0.3em;
 }
 
 .home p,
@@ -102,18 +124,13 @@ body {
 .news-page p,
 .tickets-page p,
 .about-page p,
-.home ul,
-.team ul,
-.fixtures-page ul,
-.news-page ul,
-.tickets-page ul,
-.about-page ul {
+.merchandise-page p {
   color: #fff;
-  font-size: 1.15rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 1px 1px 4px #034694;
+  font-size: 1.22rem;
+  margin-bottom: 1.2em;
+  text-shadow: 1px 2px 8px #034694;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
 }
 
 .home ul,
@@ -121,13 +138,20 @@ body {
 .fixtures-page ul,
 .news-page ul,
 .tickets-page ul,
-.about-page ul {
-  background: rgba(3, 70, 148, 0.55);
-  border-radius: 10px;
-  padding: 1em 1.5em;
+.about-page ul,
+.merchandise-page ul {
+  background: rgba(3, 70, 148, 0.60);
+  border-radius: 12px;
+  padding: 1.2em 1.7em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-  box-shadow: 0 2px 12px rgba(3,70,148,0.12);
+  box-shadow: 0 2px 12px rgba(3,70,148,0.15);
+  color: #e6c200;
+  font-size: 1.13rem;
+  text-align: left;
+  list-style: disc inside;
+  font-weight: 500;
+  max-width: 600px;
 }
 
 .home li,
@@ -135,15 +159,19 @@ body {
 .fixtures-page li,
 .news-page li,
 .tickets-page li,
-.about-page li {
-  margin-bottom: 0.7em;
+.about-page li,
+.merchandise-page li {
+  margin-bottom: 0.8em;
   color: #fff;
+  text-shadow: 1px 1px 6px #034694;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
+  gap: 24px;
   margin-top: 24px;
   justify-items: center;
   width: 100%;
@@ -161,13 +189,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid #e6c200;
+  border: 2px solid white;
   transition: transform 0.15s;
-}
-
-.player-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 18px rgba(3,70,148,0.25);
 }
 
 .player-name {
@@ -233,6 +256,51 @@ body {
   color: #fff;
 }
 
+.buy-tickets-btn {
+  background: linear-gradient(90deg, #034694 70%, #1565c0 100%);
+  color: #fff;
+  font-size: 1.08em;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(3,70,148,0.13);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+}
+
+.buy-tickets-btn:hover {
+  background: linear-gradient(90deg, #022e5a 70%, #034694 100%);
+  box-shadow: 0 4px 16px rgba(3,70,148,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* About card styles */
+.about-card.about-rect {
+  border-radius: 8px;
+  max-width: 440px;
+  padding: 28px 24px 20px 24px;
+  box-shadow: 0 2px 12px rgba(3,70,148,0.13);
+  background: rgba(3, 70, 148, 0.85);
+  margin: 48px auto 0 auto;
+}
+
+.about-card.about-rect h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #e6c200;
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  color: #e6c200;
+}
+
+.about-card.about-rect p {
+  color: #fff;
+  font-size: 1.08rem;
+  margin: 0;
+  text-shadow: 1px 1px 4px #034694;
+}
+
 /* Responsive adjustments */
 @media (max-width: 700px) {
   .home,
@@ -240,7 +308,8 @@ body {
   .fixtures-page,
   .news-page,
   .tickets-page,
-  .about-page {
+  .about-page,
+  .merchandise-page {
     padding: 30px 0 60px 0;
   }
   .team-grid {
