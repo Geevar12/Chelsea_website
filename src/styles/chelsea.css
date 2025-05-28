@@ -1,0 +1,586 @@
+/* Chelsea FC Website Styles */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.header {
+  background: linear-gradient(135deg, #034694 0%, #1565c0 50%, #034694 100%);
+  color: #fff;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(3, 70, 148, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.header img {
+  filter: drop-shadow(0 0 10px rgba(230, 194, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.header img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.home,
+.team,
+.fixtures-page,
+.news-page,
+.tickets-page,
+.about-page,
+.merchandise-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home {
+  background-image: url('https://wallpaperaccess.com/full/1640035.jpg');
+}
+
+.team {
+  background-image: url('https://wallpapercave.com/wp/wp14376774.jpg');
+}
+
+.fixtures-page {
+  background-image: url('https://wallpapercave.com/wp/wp13645790.jpg');
+}
+
+.news-page {
+  background-image: url('https://img.chelseafc.com/image/upload/f_auto,q_auto:best,f_auto/editorial/historical/new-history-section/chelsea-champions-league-munich-trophy-2012.jpg');
+}
+
+.tickets-page {
+  background-image: url('https://wallpapershigh.com/wp-content/uploads/chelsea-53.webp');
+}
+
+.about-page {
+  background-image: url('https://wallpapercave.com/wp/wp9525824.png');
+}
+
+.merchandise-page {
+  background-image: url('https://wallpaperaccess.com/full/7062383.jpg');
+}
+
+/* Enhanced overlay with animated particles */
+.home::before,
+.team::before,
+.fixtures-page::before,
+.news-page::before,
+.tickets-page::before,
+.about-page::before,
+.merchandise-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(3, 70, 148, 0.85) 0%, rgba(20, 36, 61, 0.75) 50%, rgba(3, 70, 148, 0.85) 100%);
+  z-index: 0;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background: linear-gradient(135deg, rgba(3, 70, 148, 0.85) 0%, rgba(20, 36, 61, 0.75) 50%, rgba(3, 70, 148, 0.85) 100%); }
+  50% { background: linear-gradient(135deg, rgba(20, 36, 61, 0.75) 0%, rgba(3, 70, 148, 0.85) 50%, rgba(20, 36, 61, 0.75) 100%); }
+}
+
+.home > *,
+.team > *,
+.fixtures-page > *,
+.news-page > *,
+.tickets-page > *,
+.about-page > *,
+.merchandise-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced headings with glow effect */
+.home h2,
+.team h2,
+.fixtures-page h2,
+.news-page h2,
+.tickets-page h2,
+.about-page h2,
+.merchandise-page h2 {
+  color: #e6c200;
+  font-size: 2.8rem;
+  margin-bottom: 0.7em;
+  margin-top: 0.5em;
+  text-shadow: 
+    0 0 10px #e6c200,
+    0 0 20px #e6c200,
+    0 0 30px #e6c200,
+    2px 4px 16px #034694;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: 3px solid #e6c200;
+  padding-bottom: 0.3em;
+  position: relative;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 10px #e6c200, 0 0 20px #e6c200, 0 0 30px #e6c200, 2px 4px 16px #034694; }
+  to { text-shadow: 0 0 15px #e6c200, 0 0 25px #e6c200, 0 0 35px #e6c200, 2px 4px 16px #034694; }
+}
+
+.home p,
+.team p,
+.fixtures-page p,
+.news-page p,
+.tickets-page p,
+.about-page p,
+.merchandise-page p {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 1.2em;
+  text-shadow: 2px 2px 10px #034694;
+  line-height: 1.8;
+  letter-spacing: 0.8px;
+  animation: slideInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stunning lists with glassmorphism */
+.home ul,
+.team ul,
+.fixtures-page ul,
+.news-page ul,
+.tickets-page ul,
+.about-page ul,
+.merchandise-page ul {
+  background: rgba(3, 70, 148, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 194, 0, 0.3);
+  border-radius: 20px;
+  padding: 2em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  box-shadow: 
+    0 8px 32px rgba(3, 70, 148, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #e6c200;
+  font-size: 1.2rem;
+  text-align: left;
+  list-style: none;
+  font-weight: 500;
+  max-width: 650px;
+  animation: slideInUp 0.8s ease-out 0.6s both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home ul:hover,
+.team ul:hover,
+.fixtures-page ul:hover,
+.news-page ul:hover,
+.tickets-page ul:hover,
+.about-page ul:hover,
+.merchandise-page ul:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(3, 70, 148, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.home li,
+.team li,
+.fixtures-page li,
+.news-page li,
+.tickets-page li,
+.about-page li,
+.merchandise-page li {
+  margin-bottom: 1em;
+  color: #fff;
+  text-shadow: 1px 1px 8px #034694;
+  letter-spacing: 0.6px;
+  line-height: 1.7;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.home li::before,
+.team li::before,
+.fixtures-page li::before,
+.news-page li::before,
+.tickets-page li::before,
+.about-page li::before,
+.merchandise-page li::before {
+  content: "⚽";
+  position: absolute;
+  left: 0;
+  color: #e6c200;
+  font-size: 1.2em;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Enhanced team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  justify-items: center;
+  width: 100%;
+  max-width: 1000px;
+  animation: slideInUp 0.8s ease-out 0.9s both;
+}
+
+/* Stunning player cards */
+.player-card {
+  background: linear-gradient(145deg, rgba(3, 70, 148, 0.95), rgba(21, 101, 192, 0.9));
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(3, 70, 148, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 25px 15px;
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(230, 194, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(230, 194, 0, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.player-card:hover::before {
+  left: 100%;
+}
+
+.player-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 20px 60px rgba(3, 70, 148, 0.4),
+    0 0 0 1px rgba(230, 194, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: #e6c200;
+}
+
+.player-name {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 0.4em;
+  color: #e6c200;
+  text-shadow: 0 0 10px #e6c200;
+  transition: color 0.3s ease;
+}
+
+.player-card:hover .player-name {
+  color: #fff;
+  text-shadow: 0 0 15px #e6c200;
+}
+
+.player-pos {
+  font-size: 1.05em;
+  color: #fff;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.player-card:hover .player-pos {
+  opacity: 1;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  border-bottom: 3px solid #e6c200;
+  padding-bottom: 0.5em;
+  margin-bottom: 2em;
+  color: #e6c200;
+  text-shadow: 0 0 20px #e6c200;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* Enhanced footer */
+.footer {
+  background: linear-gradient(135deg, #034694 0%, #1565c0 50%, #034694 100%);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 35px;
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(3, 70, 148, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Stunning navbar */
+.navbar {
+  background: linear-gradient(135deg, #e6c200 0%, #f4d03f 50%, #e6c200 100%);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(230, 194, 0, 0.3);
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #034694;
+  font-weight: bold;
+  font-size: 1.15em;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.navbar button:hover::before {
+  left: 100%;
+}
+
+.navbar button.active,
+.navbar button:hover {
+  background: linear-gradient(135deg, #034694, #1565c0);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(3, 70, 148, 0.3);
+}
+
+/* Enhanced buttons */
+.buy-tickets-btn {
+  background: linear-gradient(135deg, #034694 0%, #1565c0 50%, #034694 100%);
+  color: #fff;
+  font-size: 1.15em;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 
+    0 8px 25px rgba(3, 70, 148, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.buy-tickets-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.buy-tickets-btn:hover::before {
+  left: 100%;
+}
+
+.buy-tickets-btn:hover {
+  background: linear-gradient(135deg, #022e5a 0%, #034694 50%, #022e5a 100%);
+  box-shadow: 
+    0 15px 40px rgba(3, 70, 148, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Enhanced about card */
+.about-card.about-rect {
+  border-radius: 25px;
+  max-width: 500px;
+  padding: 40px 35px 30px 35px;
+  box-shadow: 
+    0 20px 60px rgba(3, 70, 148, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(3, 70, 148, 0.95), rgba(21, 101, 192, 0.9));
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(230, 194, 0, 0.3);
+  margin: 60px auto 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+.about-card.about-rect:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 30px 80px rgba(3, 70, 148, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.about-card.about-rect h2 {
+  font-size: 2.3rem;
+  border-bottom: 3px solid #e6c200;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.2em;
+  color: #e6c200;
+  text-shadow: 0 0 15px #e6c200;
+}
+
+.about-card.about-rect p {
+  color: #fff;
+  font-size: 1.15rem;
+  margin: 0;
+  text-shadow: 1px 1px 6px #034694;
+  line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .home,
+  .team,
+  .fixtures-page,
+  .news-page,
+  .tickets-page,
+  .about-page,
+  .merchandise-page {
+    padding: 40px 20px 80px 20px;
+    background-attachment: scroll;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .player-card {
+    max-width: 90vw;
+  }
+  
+  .navbar {
+    gap: 15px;
+    padding: 12px 0;
+  }
+  
+  .navbar button {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+  
+  .home h2,
+  .team h2,
+  .fixtures-page h2,
+  .news-page h2,
+  .tickets-page h2,
+  .about-page h2,
+  .merchandise-page h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Additional stunning effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.header span {
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Particle effect overlay */
+.home::after,
+.team::after,
+.fixtures-page::after,
+.news-page::after,
+.tickets-page::after,
+.about-page::after,
+.merchandise-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(230, 194, 0, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(230, 194, 0, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.1), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-200px); }
+}
